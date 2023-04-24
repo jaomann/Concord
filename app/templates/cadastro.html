@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="login">
+    <h1>Login</h1>
+    <form method="POST">
+        {{ form.nome.label }}
+        {{ form.nome(class_="form-control") }}<br>
+        {{ form.email.label }}
+        {{ form.nome(class_="form-control")}}<br>
+        {{ form.senha.label }}
+        {{ form.senha(class_="form-control")}}<br>
+        {{ form.submit()}}
+    </form method="POST">
+        <div class="cadastro">
+            <p>Ainda não tem uma conta?</p>
+            <button><a href="#" style="color:black">Criar</a></button>
+        </div>
+</div>
+{% endblock %}

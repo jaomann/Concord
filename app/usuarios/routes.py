@@ -9,7 +9,7 @@ def login():
     #rota de login para ser preenchida.
     pass
 
-@Usuario.route("/cadastro")
+@usuario.route("/cadastro", methods=["GET", "POST"])
 def novo():
     form = CadastroForm()
     if form.validate_on_submit():
@@ -19,6 +19,5 @@ def novo():
 
         db.session.add(m)
         db.session.commit()
-        return "Usuario adicionado com sucesso"
-    ##return render_template("Usuario_novo.html", form=form)
-    pass
+        return "Usuario cadastrado"
+    return render_template("cadastro.html", form=form)

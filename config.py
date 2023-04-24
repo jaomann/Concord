@@ -5,7 +5,7 @@ basedir = abspath(dirname(__file__))
 fullpath = join(basedir, "db.sqlite")
 
 class Config:
-    SECRET_KEY = os.getenv("SECRET_KEY")
+    SECRET_KEY = os.getenv("SECRET_KEY") or "algo mto secret"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 class DevelopmentConfig(Config):
