@@ -44,9 +44,29 @@ a:hover{
   margin-top: 10vh;
   border-radius: 10px;
 }
-.login form{
+.cadastro{
   text-align: center;
+  color: black;
   padding:15px;
+}
+.index{
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+}
+.apresentacao h1{
+  color:black;
+}
+.index a{
+  margin-top: 15px;
+  text-align: center;
+  font-size: 25px;
+  font-family: Helvetica;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.submit{
+  text-align: center;
+  color: black;
 }
 label{
   font-weight: bold;

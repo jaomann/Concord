@@ -2,19 +2,19 @@
 
 {% block content %}
 <div class="login">
-    <h1>Login</h1>
-    <form method="POST">
+    <h1>Cadastro</h1>
+    <form id="cadastro" method="POST">
+        {{ form.hidden_tag() }}
+        
         {{ form.nome.label }}
-        {{ form.nome(class_="form-control") }}<br>
+        {{ form.nome() }}<br>
         {{ form.email.label }}
-        {{ form.nome(class_="form-control")}}<br>
+        {{ form.email() }}<br>
         {{ form.senha.label }}
-        {{ form.senha(class_="form-control")}}<br>
-        {{ form.submit()}}
-    </form method="POST">
-        <div class="cadastro">
-            <p>Ainda não tem uma conta?</p>
-            <button><a href="#" style="color:black">Criar</a></button>
+        {{ form.senha() }}<br>
+        <div class="submit">
+            {{ form.submit() }}
         </div>
+    </form>
 </div>
 {% endblock %}

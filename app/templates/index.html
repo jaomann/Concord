@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content%}
-<h1>Bem vindo</h1>
-<button><a href="{{url_for('usuario.novo')}}">Aperte para fazer seu cadastro</a></button>
+<div class="index">
+    <h1>Bem vindo ao Concord</h1>
+    <div class="apresentacao">
+        <h2>O melhor lugar para</h2>
+        <h2>Se conectar com seus amigos</h2>
+        <h2>Seus clientes, colegas</h2>
+        <h1>Se conectar com quem quiser!</h1>
+    </div>
+    <a href="{{url_for('usuario.registro')}}">Aperte para começar a se comunicar melhor!</a>
+</div>
 {% endblock %}
