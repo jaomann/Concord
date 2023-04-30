@@ -8,25 +8,6 @@ body{
   background-size: cover;
   opacity: 80;
 }
-/*Header*/
-li{
-  display: inline;
-  float:right;
-  font-weight: bold;
-}
-li a {
-  color: aliceblue;
-  display: block;
-  padding: 8px;
-}
-.topo{
-  background-color: rgba(0, 0, 0, 0.70);
-}
-.topo h1{
-  color:aliceblue;
-  padding:15px;
-  font-size: 25px;
-}
 /*Cadastro*/
 .cadastro{
   color:aliceblue;
@@ -47,7 +28,7 @@ label{
   padding:50px;
   background-color: rgba(255, 255, 255, 0.8);
   margin-top:50px;
-  margin-left: 300px;
+  margin-left: 250px;
   border-radius: 50px;
 }
 .welcome button{

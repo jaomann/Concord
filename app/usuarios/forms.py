@@ -12,6 +12,7 @@ class CadastroForm(FlaskForm):
     nome = StringField('Nome', validators=[DataRequired()])
     email = StringField('E-mail', validators=[DataRequired()])
     senha = PasswordField('Senha', validators=[DataRequired()])
+    nascimento = StringField('Data de Nascimento', validators=[DataRequired()])
     uf = StringField('Estado')
     origem = StringField('País', validators=[DataRequired()])
     submit = SubmitField('Registrar')

@@ -28,10 +28,11 @@ def registro():
     if form.validate_on_submit():
         nome = form.nome.data
         email = form.email.data
+        nascimento = form.nascimento.data
         estado = form.uf.data
         pais = form.origem.data
         senha = form.senha.data
-        usuario = Usuario(nome=nome, email=email, senha=senha, estado=estado, pais=pais)
+        usuario = Usuario(nome=nome, email=email, senha=senha, nascimento=nascimento, estado=estado, pais=pais)
         db.session.add(usuario)
         db.session.commit()
         return redirect(url_for('usuario.login'))
