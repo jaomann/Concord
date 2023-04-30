@@ -4,19 +4,11 @@
 <div class="container">
     <div class="row">
         <div class="cadastro">
-            <h3>Faça seu cadastro!</h3>
+            <h3>Olá denovo!</h3>
             <div class="col-md-4">
-                <form id="cadastro" method="POST">
+                <form id="login" method="POST">
                     {{ form.hidden_tag() }}
                     
-                    {{ form.nome.label }}
-                    {{ form.nome(class_="form-control") }}<br>
-                    {{ form.nascimento.label }}
-                    {{ form.nascimento(class_="form-control")}}<br>
-                    {{ form.origem.label }}
-                    {{ form.origem(class_="form-control") }}<br>
-                    {{ form.uf.label }}
-                    {{ form.uf(class_="form-control")}}<br>
                     {{ form.email.label }}
                     {{ form.email(class_="form-control") }}<br>
                     {{ form.senha.label }}
@@ -26,7 +18,6 @@
                     </div>
                 </form>
             </div>
-            <p>Já tem conta?<a href="{{ url_for('usuario.login')}}">Vem pra cá</a>.</p>
         </div>
     </div>
 </div>

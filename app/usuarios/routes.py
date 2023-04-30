@@ -4,7 +4,7 @@ from app.usuarios.forms import LoginForm, CadastroForm
 from app.models import Usuario
 from flask_login import login_user
 from flask_login import logout_user
-from flask import render_template
+from flask import render_template, redirect, url_for
 
 
 @usuario.route("/login", methods=['GET', 'POST'])
@@ -28,11 +28,13 @@ def registro():
     if form.validate_on_submit():
         nome = form.nome.data
         email = form.email.data
-        #senha = form.senha.data
-        usuario = Usuario(nome=nome, email=email)
+        estado = form.uf.data
+        pais = form.origem.data
+        senha = form.senha.data
+        usuario = Usuario(nome=nome, email=email, senha=senha, estado=estado, pais=pais)
         db.session.add(usuario)
         db.session.commit()
-        return "Usuário cadastrado com sucesso!!!"
+        return redirect(url_for('usuario.login'))
     return render_template('cadastro.html', form=form)
 
 
