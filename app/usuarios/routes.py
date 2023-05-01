@@ -2,8 +2,7 @@ from app import db
 from app.usuarios import usuario
 from app.usuarios.forms import LoginForm, CadastroForm
 from app.models import Usuario
-from flask_login import login_user
-from flask_login import logout_user
+from flask_login import login_user, logout_user
 from flask import render_template, redirect, url_for
 
 
@@ -32,7 +31,7 @@ def registro():
         estado = form.uf.data
         pais = form.origem.data
         senha = form.senha.data
-        usuario = Usuario(nome=nome, email=email, senha=senha, nascimento=nascimento, estado=estado, pais=pais)
+        usuario = Usuario(nome=nome, nascimento=nascimento, estado=estado, pais=pais, email=email, senha=senha)
         db.session.add(usuario)
         db.session.commit()
         return redirect(url_for('usuario.login'))
