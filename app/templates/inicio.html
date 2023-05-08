@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<header class="inicio">
+    <h1>    
+        Boas vindas {{usuario}}!
+    </h1>
+</header>
+<main>
+    <div class="container bg-dark text-white">
+        <div class="logo">
+            <div class="front">
+                <img src="../static/img/logo-discord-vermelho.png">
+            </div>
+            <div class="back">
+                <p>{{usuario}}</p>
+            </div>
+        </div>
+        <h1>Conecte-se</h1>
+        <br>
+        <form>
+            {{ form.hidden_tag() }}
+            {{ form.sala.label }}
+            {{ form.sala(class_="form-control")}}
+            {{ form.submit(class_="form-control")}}
+        </form>
+    </div>
+</main>
+{% endblock %}

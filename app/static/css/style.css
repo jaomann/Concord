@@ -15,12 +15,12 @@ body{
 /*Cadastro*/
 .container1{
   
-  color:aliceblue;
-  margin-left: 700px;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 10px;
-  width: 60%;
+ color: aliceblue;
+ margin-left: 700px;
+ padding: 20px;
+ margin-top: 20px;
+ border-radius: 10px;
+ width: 60%;
 
 
     
@@ -72,4 +72,44 @@ label{
   border-radius: 45px;
   padding: 15px;
   font-size: 25px;
+}
+.inicio{
+  color:white;
+  text-align: initial;
+  padding:25px;
+  background-color: rgba(0,0,0,0.6);
+}
+main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main img{
+  text-align: initial;
+  width: 50px;
+  position: relative;
+  perspective: 1000px;
+}
+main .front,.back{
+  position: absolute;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: all 1s ease;
+}
+main .front{
+  transform: rotateY(0deg);
+}
+main .back{
+  text-align: center;
+  transform: rotateY(180deg);
+  border-radius: 15px;
+}
+main .logo:hover .front{
+  transform: rotateY(-180deg);
+}
+main .logo:hover .back{
+  transform: rotateY(0deg);
+}
+main p{
+  text-align: center;
 }

@@ -1,6 +1,6 @@
 from app import db
 from app.usuarios import usuario
-from app.usuarios.forms import LoginForm, CadastroForm
+from app.usuarios.forms import LoginForm, CadastroForm, InicioForm
 from app.models import Usuario
 from flask_login import login_user, logout_user
 from flask import render_template, redirect, url_for
@@ -37,7 +37,11 @@ def registro():
         return redirect(url_for('usuario.login'))
     return render_template('cadastro.html', form=form)
 
-
+@usuario.route('/inicio')
+def inicio():
+    form = InicioForm()
+    usuario = Usuario.query.all()
+    return render_template('inicio.html', form=form, usuario=usuario.nome)
 @usuario.route('/logout') 
 def logout():
     logout_user()
