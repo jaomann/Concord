@@ -13,11 +13,12 @@ class Usuario(db.Model, UserMixin):
     estado = db.Column(db.String(64))
     pais = db.Column(db.String(64))
     email = db.Column(db.String(64))
+    senha_hash = db.Column(db.String(64))
     @property 
     def senha(self):
         raise AttributeError("A senha não é visível")
     @senha.setter
     def senha(self, senha):    
         self.senha_hash = generate_password_hash(senha)
-    def verifica(self, senha):
+    def verifica_senha(self, senha):
         return check_password_hash(self.senha_hash, senha)

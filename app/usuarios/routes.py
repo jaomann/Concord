@@ -6,7 +6,7 @@ from flask_login import login_user, logout_user
 from flask import render_template, redirect, url_for
 
 
-@usuario.route("/login", methods=['GET', 'POST'])
+@usuario.route("/login", methods=['GET','POST'])
 def login():
     form = LoginForm()
     if form.validate_on_submit():
@@ -16,7 +16,7 @@ def login():
         usuario = Usuario.query.filter_by(email=email).first()
         if usuario and usuario.verifica_senha(senha):
             login_user(usuario)
-            return('Login efetuado com sucesso')
+            return redirect(url_for('usuario.inicio'))
         return 'Usuário ou senha inválidos'
     return render_template("login.html", form=form)
 
@@ -40,8 +40,7 @@ def registro():
 @usuario.route('/inicio')
 def inicio():
     form = InicioForm()
-    usuario = Usuario.query.all()
-    return render_template('inicio.html', form=form, usuario=usuario.nome)
+    return render_template('inicio.html', form=form)
 @usuario.route('/logout') 
 def logout():
     logout_user()

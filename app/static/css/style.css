@@ -64,6 +64,7 @@ label{
   border-radius: 50px;
  
 }
+/**/
 .welcome button{
   border:none;
   background-color: rgb(15, 15, 15,0.9);
@@ -111,5 +112,8 @@ main .logo:hover .back{
   transform: rotateY(0deg);
 }
 main p{
+  text-align: center;
+}
+main h1{
   text-align: center;
 }

@@ -3,7 +3,7 @@
 {% block content %}
 <header class="inicio">
     <h1>    
-        Boas vindas {{usuario}}!
+        Boas vindas {{current_user.nome}}!
     </h1>
 </header>
 <main>
@@ -13,10 +13,10 @@
                 <img src="../static/img/logo-discord-vermelho.png">
             </div>
             <div class="back">
-                <p>{{usuario}}</p>
+                <p>{{current_user.nome}}</p>
             </div>
+            <h1>Conecte-se</h1>
         </div>
-        <h1>Conecte-se</h1>
         <br>
         <form>
             {{ form.hidden_tag() }}
