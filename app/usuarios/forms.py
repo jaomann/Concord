@@ -17,5 +17,5 @@ class CadastroForm(FlaskForm):
     submit = SubmitField('Registrar')
     
 class InicioForm(FlaskForm):
-    sala = StringField('Sala')
+    sala = StringField('Sala: ', validators=[DataRequired()])
     submit = SubmitField('Pesquisar')

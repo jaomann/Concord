@@ -15,17 +15,18 @@
             <div class="back">
                 <p>{{current_user.nome}}</p>
             </div>
-            <h1>Conecte-se</h1>
+            <h1>{{sala}}</h1>
+            <div id="msgs" class="container bg-light text-dark">
+                <br>
+                <br>
+            </div>
+            <br>
+            <input type="text" id="msg" placeholder="enviar mensagem"><br><br>
+            <button class="btn btn-outline-info" onclick="enviar()">Enviar</button>
+            {% set local = url_for('main.index') %}
+            <button class="btn btn-outline-info" onclick="desconectar('{{local}}')">Sair da Sala</button>
         </div>
         <br>
-        <form method="POST">
-            {{ form.hidden_tag() }}
-            {{ form.sala.label }}
-            {{ form.sala(class_="form-control")}}<br>
-            <button id="join">
-                {{ form.submit(class_="form-control")}}
-            </button>
-        </form>
     </div>
 </main>
 {% endblock %}
